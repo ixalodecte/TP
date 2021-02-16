@@ -5,10 +5,11 @@
 	exception TokenInconu
 }
 rule token = parse
-		[' ' '\t' '\n'] 					{ token lexbuf }
-		| ';'                       { PT_VIRG }
+		[' ' '\t' '\n'] 				{ token lexbuf }
+		| ';'                      			 { PT_VIRG }
 		| ['0'-'9']+					{ NOMBRE }
-		| '+' 						{ PLUS }
+		| ['0'-'9']+['.']['0'-'9']+			{ NOMBRE }
+		| '+' 			 			{ PLUS }
 		| '-' 						{ MOINS }
 		| '*' 						{ FOIS }
 		| '(' 						{ GPAREN }
