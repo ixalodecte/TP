@@ -5,8 +5,10 @@
 
 %type <unit> main expression
 %start main
-%%main:
-    expression EOL                {};
+%%
+main:
+    expression EOL                {}
+    ;
 expression:
     expression PLUS expression    {}
     | expression MOINS expression   {}
