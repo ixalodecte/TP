@@ -1,3 +1,4 @@
+
 let _ = 									(*main en OCaml*)
 	try
 		let lexbuf = Lexing.from_channel stdin in 	(*lexeur lancé sur stdin*)
