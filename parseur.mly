@@ -1,4 +1,5 @@
-%token NOMBRE PLUS MOINS FOIS GPAREN DPAREN PT_VIRG
+%token <int> NOMBRE
+%token PLUS MOINS FOIS GPAREN DPAREN PT_VIRG
 %left PLUS MOINS
 %left FOIS
 %nonassoc UMOINS
@@ -8,7 +9,7 @@
 %%
 
 main:
-    expression PT_VIRG                {}
+    expression PT_VIRG                { $1 }
     ;
 expression:
     expression PLUS expression    { $1+$3}
