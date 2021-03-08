@@ -1,13 +1,15 @@
 %token NOMBRE PLUS MOINS FOIS GPAREN DPAREN PT_VIRG
-%type <unit> main expression terme facteur
 %left PLUS MOINS
 %left FOIS
 %nonassoc UMOINS
+
+%type <unit> main expression
+
 %start main
 %%
 
 main:
-    expression EOL                {}
+    expression PT_VIRG                {}
     ;
 expression:
     expression PLUS expression    {}
